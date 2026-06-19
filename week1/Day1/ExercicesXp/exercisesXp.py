@@ -15,7 +15,6 @@ print("Hello world:\n"*3)
 
 
 
-
 # # Challenge 2
 # #Exercice 2
 #Write code that calculates the result of:
@@ -69,8 +68,8 @@ print(info)
 #Create two variables, a and b.
 #Each variable’s value should be a number.
 #If a is bigger than b, have your code print "Hello World".
-a=15
-b=7
+a=20
+b=10
 if a>b :
     print("Hello world")
 
@@ -88,12 +87,15 @@ else:    print("Le nombre est impair")
 #Exercice 8
 #Instructions
 #Write code that asks the user for their name and determines whether or not you have the same name. Print out a funny message based on the outcome.
-nom1=input("Entrez votre nom :   "  )
-nom2="Aicha"            
-if nom1==nom2:
-    print("You , c'est le même nom!")   
+my_name = "Aïcha"
 
-else:    print("Oups, les noms sont différents, reessayez !")    
+user_name = input("What's your name? ")
+
+if user_name == my_name:
+    print("No way! We have the same name! Are you my twin or what?")
+else:
+    print(f"Nice to meet you, {user_name}! I'm Aïcha, your name is cool but mine is cooler")
+
 
 #Exercise 9
 #Write code that will ask the user for their height in centimeters.
