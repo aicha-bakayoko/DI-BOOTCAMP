@@ -116,4 +116,4 @@ if __name__ == "__main__":
     # [Circle(2), Circle(4), Circle(5.0), Circle(6)]
 
     # Lance la fenêtre graphique (clique dans la fenêtre pour la fermer)
-    draw_circles(circles)g   
+    draw_circles(circles)
