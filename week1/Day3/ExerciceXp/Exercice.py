@@ -8,9 +8,9 @@ class Cat:
         self.age = cat_age
 
 # Étape 1 : Créer trois objets chat
-cat1 = Cat("Minou", 3)
-cat2 = Cat("Tigrou", 7)
-cat3 = Cat("Luna", 5)
+cat1 = Cat("Mian", 1)
+cat2 = Cat("Micha", 5)
+cat3 = Cat("Chini", 3)
 
 # Étape 2 : Trouver le chat le plus vieux
 def find_oldest_cat(cat1, cat2, cat3):

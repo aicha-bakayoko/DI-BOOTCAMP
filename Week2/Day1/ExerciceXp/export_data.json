@@ -1,0 +1,26 @@
+[
+    {
+        "Nom":"Alice",
+        "\u00c2ge":25,
+        "Ville":"Abidjan",
+        "Salaire":500
+    },
+    {
+        "Nom":"Bob",
+        "\u00c2ge":30,
+        "Ville":"Paris",
+        "Salaire":1200
+    },
+    {
+        "Nom":"Charlie",
+        "\u00c2ge":35,
+        "Ville":"London",
+        "Salaire":1800
+    },
+    {
+        "Nom":"Diana",
+        "\u00c2ge":28,
+        "Ville":"New York",
+        "Salaire":950
+    }
+]

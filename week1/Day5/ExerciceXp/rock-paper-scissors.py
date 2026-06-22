@@ -1,73 +1,54 @@
-"""
-rock-paper-scissors.py
-Fichier principal : menu, gestion des parties et affichage du récapitulatif.
-"""
-
 from game import Game
 
 
 def get_user_menu_choice():
     """
-    Affiche le menu et retourne le choix de l'utilisateur (sans boucle).
-    Choix possibles : '1' (jouer), '2' (scores), 'q' (quitter).
+    Affiche le menu et récupère le choix de l'utilisateur (sans boucle interne).
+    Returns: str ('g' ou 'x', ou autre valeur invalide)
     """
-    print("\n" + "=" * 35)
-    print("   🪨📄✂️  PIERRE - FEUILLE - CISEAUX")
-    print("=" * 35)
-    print("  1. Jouer une nouvelle partie")
-    print("  2. Afficher les scores")
-    print("  q. Quitter")
-    print("=" * 35)
+    print("""
+    Menu:
+    (g) Play a new game
+    (x) Show scores and exit
+    """)
+    choice = input(": ").lower()
 
-    choix = input("Votre choix : ").strip().lower()
-    return choix
+    if choice not in ["g", "x"]:
+        print("Invalid choice. Please select 'g' or 'x'.")
+
+    return choice
 
 
 def print_results(results):
     """
-    Affiche le récapitulatif de toutes les parties jouées.
-    Paramètre : results — dict au format {win: int, loss: int, draw: int}
+    Affiche le résumé des résultats et remercie l'utilisateur.
+    Parameters:
+        results (dict): {'win': int, 'loss': int, 'draw': int}
     """
-    total = results["win"] + results["loss"] + results["draw"]
-
-    print("\n" + "=" * 35)
-    print("        📊 RÉCAPITULATIF")
-    print("=" * 35)
-    print(f"  Parties jouées : {total}")
-    print(f"  🏆 Victoires   : {results['win']}")
-    print(f"  😞 Défaites    : {results['loss']}")
-    print(f"  🤝 Matchs nuls : {results['draw']}")
-    print("=" * 35)
-    print("  Merci d'avoir joué ! À bientôt 👋")
-    print("=" * 35)
+    print("""
+    Game Results:""")
+    print(f"     You won {results.get('win', 0)} times")
+    print(f"     You lost {results.get('loss', 0)} times")
+    print(f"     You drew {results.get('draw', 0)} times")
+    print("\n    Thank you for playing!")
 
 
 def main():
-    """
-    Fonction principale :
-    - Affiche le menu en boucle
-    - Gère les parties et le suivi des scores
-    - Affiche le récapitulatif à la sortie
-    """
+    """Fonction principale : boucle le menu jusqu'à ce que l'utilisateur quitte."""
     results = {"win": 0, "loss": 0, "draw": 0}
 
     while True:
-        choix = get_user_menu_choice()
+        choice = get_user_menu_choice()
 
-        if choix == "1":
+        if choice == "g":
             game = Game()
             result = game.play()
             results[result] += 1
-
-        elif choix == "2":
-            print_results(results)
-
-        elif choix in ("q", "x"):
+        elif choice == "x":
             print_results(results)
             break
-
-        else:
-            print("❌ Choix invalide. Entrez 1, 2 ou q.")
+        # Si le choix est invalide, on ne fait rien : le menu se réaffiche
+        # automatiquement au prochain tour de la boucle while.
 
 
 if __name__ == "__main__":
